@@ -1,0 +1,76 @@
+{
+    "firstname" :
+    [
+        "Juan",
+        "Peter",
+        "Harry",
+        "Kali",
+        "Bill",
+        "Steve",
+        "Rick",
+        "Bark",
+        "Emily",
+        "Julie"
+    ],
+    "lastname" :
+    [
+        "Finz",
+        "Gulle",
+        "Amrre",
+        "Pack",
+        "Corz",
+        "Yosar",
+        "Bail",
+        "Pepe",
+        "Land"
+    ],
+    "address" :
+    [
+        "Beauty street",
+        "Priest 7",
+        "D. Peter",
+        "Fame",
+        "Harry Poter",
+        "ZingZong"
+    ],
+    "status" :
+    [
+        "Feeling great",
+        "Really well",
+        "Something awesome today",
+        "Today is a great day",
+        "Its good enough",
+        "Im good",
+        "Im fine",
+        "Could be better",
+        "Why me",
+        "I need help",
+        "Bad day"
+    ],
+    "animal" :
+    [
+        "Dog",
+        "Cat",
+        "Fish",
+        "Hammster",
+        "Squirrel",
+        "Rabit",
+        "Bird"
+    ],
+    "car" :
+    [
+        "Tesla",
+        "Toyota",
+        "Honda",
+        "Mercedes",
+        "Renault",
+        "Porshe",
+        "Ferrari",
+        "Ford",
+        "Seat",
+        "AlfaRomeo",
+        "Skoda",
+        "Opel",
+        "Peugeot"
+    ]
+}
