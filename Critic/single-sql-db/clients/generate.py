@@ -1,18 +1,6 @@
-# run threaded clients according to a file which they will be adding modifying and deleting data
-
 import json
 import random
-
-
-class Client(object):
-
-    def __init__(self, firstname, lastname, address, status, animal, car):
-        self.firstname = firstname
-        self.lastname = lastname
-        self.address = address
-        self.status = status
-        self.animal = animal
-        self.car = car
+from client import Client
 
 
 class Generate(object):
@@ -22,8 +10,8 @@ class Generate(object):
 
     @staticmethod
     def clients(number_of_clients):
-        
-        with open('data.json') as data_file:    
+
+        with open('data.json') as data_file:
             data = json.load(data_file)
 
         t_firstname = len(data["firstname"])
@@ -34,7 +22,7 @@ class Generate(object):
         t_car = len(data["car"])
 
         clients = []
-        
+
         while number_of_clients > 0:
             firstname = data["firstname"][random.randint(0, t_firstname - 1)]
             lastname = data["lastname"][random.randint(0, t_lastname - 1)]
@@ -46,15 +34,3 @@ class Generate(object):
             number_of_clients -= 1
 
         return clients
-
-
-
-
-
-
-
-clients = Generate.clients(10)
-
-
-
-print "clients"
