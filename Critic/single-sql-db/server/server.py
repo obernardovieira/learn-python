@@ -1,6 +1,12 @@
+import os
 from flask import Flask, request
 import json
 import mysql.connector
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 cnx = ""
@@ -38,8 +44,14 @@ def get(name):
 
 if __name__ == "__main__":
 
+    MYSQL_USER = os.environ.get("MYSQL_USER")
+    MYSQL_PASS = os.environ.get("MYSQL_PASS")
+    MYSQL_HOST = os.environ.get("MYSQL_HOST")
+    MYSQL_DB = os.environ.get("MYSQL_DB")
+
     try:
-        cnx = mysql.connector.connect(user='scott', database='testt')
+        cnx = mysql.connector.connect(user=MYSQL_USER, password=MYSQL_PASS,
+                                      host=MYSQL_HOST, database=MYSQL_DB)
     except mysql.connector.Error as err:
         print(err)
     else:
