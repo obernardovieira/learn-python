@@ -1,9 +1,12 @@
 # run a rest api which starts a new thread to each request
 
 import thread
-from flask import Flask
+from flask import Flask, abort, request
+import json
+import mysql.connector
 
 app = Flask(__name__)
+cnx = ""
 
 def print_time(thread_name):
     print thread_name
@@ -34,4 +37,12 @@ def get(name):
 
 
 if __name__ == "__main__":
+
+    try:
+        cnx = mysql.connector.connect(user='scott', database='testt')
+    except mysql.connector.Error as err:
+        print(err)
+    else:
+        cnx.close()
+
     app.run(host="0.0.0.0", port=3000)
