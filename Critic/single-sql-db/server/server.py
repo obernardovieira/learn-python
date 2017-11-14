@@ -8,13 +8,24 @@ import mysql.connector
 app = Flask(__name__)
 cnx = ""
 
+
 def print_time(thread_name):
     print thread_name
 
 
 @app.route("/new", methods=['POST'])
 def new():
-    pass
+    if not request.json:
+        return json.dumps({"result": "400"})
+
+    data = json.load(request.json)
+    add_employee = ("INSERT INTO client(firstname, lastname, address, status, animal, car) VALUES" +
+                    "(%(firstname)s, %(lastname)s, %(address)s, %(status)s, %(animal)s, %(car)s)")
+    data_employee = (data["firstname"], data["lastname"],
+                    data["address"], data["status"], data["animal"], data["car"])
+    cursor = cnx.cursor()
+    cursor.execute(add_employee, data_employee)
+    return json.dumps({"result": "200"})
 
 
 @app.route("/update")
